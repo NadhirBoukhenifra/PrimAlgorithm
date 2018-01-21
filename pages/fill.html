@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TP Éléments de Combinatoire! 01022018</title>
+    <link rel="stylesheet" href="..\assets\css\bootstrap.min.css">
+    <link rel="stylesheet" href="..\assets\css\custom.css">
+
+    <script src="..\assets\js\jquery.min.js"></script>
+    <script src="..\assets\js\popper.min.js"></script>
+    <script src="..\assets\js\bootstrap.min.js"></script>
+    <script src="..\assets\js\jquery.session.js"></script>
+    <script src="..\assets\js\custom.js"></script>
+
+  </head>
+  <body>
+    <div class="container-fluid justify-content-center">
+        <div class="row justify-content-center align-self-center">
+            <div class="col-sm align-self-center">
+              <br>
+              <nav class="nav nav-pills nav-justified">
+                <a class="nav-item nav-link " href="..\index.html">Bienvenue</a>
+                <a class="nav-item nav-link " href="add.html">Sommets</a>
+                <a class="nav-item nav-link active" href="fill.html">Remplir</a>
+                <a class="nav-item nav-link disabled" href="#">Appliquer PRIM</a>
+              </nav>
+              <br>
+
+                <div class="card text-center">
+                    <h5 class="card-header">Remplir!</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Étape 2. remplir les données dans le tableau:</h5>
+                        <p class="card-text"><em>remplir le tableau ci-dessous</em>.</p>
+                        <!--<script type="text/javascript">
+                          document.write($.session.get('numberOfVertices'))
+                        </script>-->
+                        <div class="table-responsive">
+                          <table class="table table-bordered">
+                              <thead>
+                              <tr>
+                                  <th scope="col">/</th>
+                                  <script>
+                                    console.log($.session.get('numberOfVertices'))
+                                    for (i = 1; i < $.session.get('numberOfVertices'); i++) {
+                                      document.write('<th scope="col">' + String.fromCharCode(i+64) + '</th>');
+                                    }
+                                  </script>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <script>
+                                for (j = 1; j < $.session.get('numberOfVertices'); j++) {
+                                  document.write('<tr><th scope="row">' + String.fromCharCode(j+64) + '</th>');
+                                  for (k = 1; k < $.session.get('numberOfVertices'); k++) {
+                                    //document.write('<td>' + j + ' ' + k + '</td>');
+
+                                    if(j == k ){
+                                      document.write('<td><div class="input-group">' +
+                                        //'<input type="text" class="form-control" placeholder="'+ j + ',' + k +'" aria-label="Username" aria-describedby="basic-addon1">' +
+                                        '<input readonly type="text" class="form-control" placeholder="--" aria-label="" data-toggle="tooltip" title="' + String.fromCharCode(j+64) + ' à ' + String.fromCharCode(k+64) + '" aria-describedby="">' +
+                                        '</div></td>')
+                                    } else {
+                                      document.write('<td><div class="input-group">' +
+                                        //'<input type="text" class="form-control" placeholder="'+ j + ',' + k +'" aria-label="Username" aria-describedby="basic-addon1">' +
+                                        '<input id="' + String.fromCharCode(j+64) + String.fromCharCode(k+64) +'" type="text" class="form-control" placeholder="&infin;" aria-label="" data-toggle="tooltip" title="' + String.fromCharCode(j+64) + ' à ' + String.fromCharCode(k+64) + '" aria-describedby="">' +
+                                        '</div></td>')
+                                    }
+                                  }
+                                  document.write('</tr>');
+                                }
+                              </script>
+                              </tbody>
+                          </table>
+                        </div>
+
+                        <br>
+                        <a href="show.html" id="fillVerticesButton" class="btn btn-primary btn-block">L'étape Suivante</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                      Projet par <a href="https://www.facebook.com/NadhirBoukhenifra">#NadhirBoukhenifra</a> &#10084; <em>JavaScript</em>
+                      <span><br>1er année Master Cryptographie et Sécurité (CS).<br>Faculté des Mathématiques et de l'Informatique<br>Département d'Informatique<br>Université de Batna 2<br>Promo 2017/2018. </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+  </body>
+</html>
